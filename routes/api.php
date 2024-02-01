@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\CronController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +16,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::post('register', [UserController::class, 'register']);
+
+Route::post('login', [UserController::class, 'login']);
+
+Route::post('logout', [UserController::class, 'logout'])->middleware('auth:sanctum');
+
+Route::post('/user/{id}/subscription', [UserController::class, 'createSubscription'])->middleware('auth:sanctum');
+
+Route::put('/user/{id}/subscription/{subscriptionId}', [UserController::class, 'updateSubscription'])->middleware('auth:sanctum');
+
+Route::delete('/user/{id}/subscription', [UserController::class, 'deleteSubscription'])->middleware('auth:sanctum');
+
+Route::post('/user/{id}/transaction', [UserController::class, 'createTransaction'])->middleware('auth:sanctum');
+
+Route::get('/user/{id}', [UserController::class, 'getUserWithDetails'])->middleware('auth:sanctum');
+
+Route::get('/cron', [CronController::class, 'cron']);
