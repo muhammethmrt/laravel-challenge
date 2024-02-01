@@ -1,3 +1,18 @@
+## Getting Started
+
+This project works with [LaravelChallenge](https://github.com/muhammethmrt/laravel-challenge) as a backend.
+
+## Installation
+
+- After opening a terminal window on a directory of your preference to download the project, run [`git clone https://github.com/muhammethmrt/laravel-challenge`](https://github.com/muhammethmrt/laravel-challenge),
+- Run `cd laravel-challenge`,
+- Change filename .env.example to .env
+- Run `composer install`,
+- Run `php artisan migrate`,
+- Run `php artisan serve`
+- Include a postman collection file [`LaravelChallenge.postman_collection.json`](https://github.com/muhammethmrt/laravel-challenge/blob/main/LaravelChallenge.postman_collection.json)
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
